@@ -64,7 +64,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>co.edu.uniquindio.redsocial/co.edu.uniquindio.redsocial.HelloApplication
+                            <mainClass>co.edu.uniquindio.redsocial/co.edu.uniquindio.redsocial.Network
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

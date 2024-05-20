@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="313.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="111.0" fitWidth="121.0" layoutX="96.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/profilepicture.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="66.0" layoutY="200.0" prefHeight="35.0" prefWidth="172.0" promptText="Usuario" style="-fx-background-radius: 50;" />
+      <TextField layoutX="66.0" layoutY="263.0" prefHeight="35.0" prefWidth="172.0" promptText="Contraseña" style="-fx-background-radius: 50;" />
+      <Button fx:id="initBoton" layoutX="115.0" layoutY="391.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="73.0" style="-fx-background-radius: 30;" text="Iniciar" />
+      <ComboBox layoutX="76.0" layoutY="320.0" prefHeight="35.0" prefWidth="150.0" promptText="Rol" style="-fx-background-radius: 10;" />
+   </children>
+</Pane>

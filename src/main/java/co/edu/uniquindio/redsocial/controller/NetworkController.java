@@ -1,9 +1,9 @@
-package co.edu.uniquindio.redsocial;
+package co.edu.uniquindio.redsocial.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class NetworkController {
     @FXML
     private Label welcomeText;
 
