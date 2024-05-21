@@ -5,6 +5,7 @@ import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
 
 public class Grafo {
     private int numVertices;
+    private ListaSimple<Vendedor> listaVendedores;
     private ListaSimple<ListaSimple<Vendedor>> listaAdyacencias;
 
     public Grafo(int numVertices) {
@@ -19,6 +20,7 @@ public class Grafo {
         int indiceOrigen = obtenerIndiceVendedor(origen);
         int indiceDestino = obtenerIndiceVendedor(destino);
         if (indiceOrigen != -1 && indiceDestino != -1) {
+
             listaAdyacencias.obtenerValorNodo(indiceOrigen).agregarfinal(destino);
             listaAdyacencias.obtenerValorNodo(indiceDestino).agregarfinal(origen);
         }
@@ -33,11 +35,16 @@ public class Grafo {
     }
 
     private int obtenerIndiceVendedor(Vendedor vendedor) {
-        // Implementa la lógica para obtener el índice del vértice en la lista
-        // Puede ser a través de un identificador único o algún otro criterio
-        // Si no se encuentra, devuelve -1
 
-        for(Vendedor vendedor: lis)
-        return 0;
+        for(int i = 0; i<listaVendedores.getTamanio()-1; i++){
+
+            if(listaVendedores.obtenerValorNodo(i).getId().equalsIgnoreCase(vendedor.getId())){
+
+                return i;
+
+            }
+
+        }
+        return -1;
     }
 }
