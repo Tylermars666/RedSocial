@@ -1,4 +1,6 @@
 package co.edu.uniquindio.redsocial.model;
 
-public class Venta {
+import java.io.Serializable;
+
+public class Venta implements Serializable {
 }

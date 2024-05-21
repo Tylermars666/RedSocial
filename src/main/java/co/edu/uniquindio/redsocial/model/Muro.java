@@ -1,4 +1,6 @@
 package co.edu.uniquindio.redsocial.model;
 
-public class Muro {
+import java.io.Serializable;
+
+public class Muro implements Serializable {
 }

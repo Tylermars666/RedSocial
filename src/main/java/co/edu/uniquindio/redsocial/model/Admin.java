@@ -1,4 +1,12 @@
 package co.edu.uniquindio.redsocial.model;
 
-public class Admin {
+import java.io.Serializable;
+
+public class Admin implements Serializable {
+
+    private String nombre;
+    private String id;
+    private Muro muro;
+
+
 }
