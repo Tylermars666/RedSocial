@@ -4,16 +4,12 @@ import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
 
 import java.io.Serializable;
 
-public class Admin implements Serializable {
+public class Admin extends Usuario implements Serializable {
 
-    private String nombre;
-    private String id;
-    private Muro muro;
-    private String direccion;
-    private String usuario;
-    private String clave;
-    //Lista de adyacencias?
+    public Admin() {
+    }
 
-
-
+    public Admin(String nombre, String id, Muro muro, String usuario, String clave, String apellido) {
+        super(nombre, id, muro, usuario, clave, apellido);
+    }
 }

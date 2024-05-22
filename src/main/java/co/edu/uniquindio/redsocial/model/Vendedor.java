@@ -5,42 +5,27 @@ import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
 
 import java.io.Serializable;
 
-public class Vendedor implements Serializable {
+public class Vendedor extends Usuario implements Serializable{
 
-    private String nombre;
-    private String apellido;
-    private String id;
     private String direccion;
-    private String usuario;
-    private String clave;
     private ListaSimple<Producto> listaProductos;
-    private Muro muro;
     private Cola<Solicitud> solicitudes;
     private ListaSimple<Vendedor> contactos;
 
+    public Vendedor() {
 
-    public String getNombre() {
-        return nombre;
+        this.listaProductos = new ListaSimple<>();
+        this.solicitudes = new Cola<>();
+        this.contactos = new ListaSimple<>();
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public Vendedor(String nombre, String id, Muro muro, String usuario, String clave, String direccion, String apellido) {
+        super(nombre, id, muro, usuario, clave, apellido);
+        this.direccion = direccion;
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        listaProductos = new ListaSimple<>();
+        solicitudes = new Cola<>();
+        contactos = new ListaSimple<>();
     }
 
     public String getDireccion() {
@@ -51,51 +36,28 @@ public class Vendedor implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
-    }
-
     public ListaSimple<Producto> getListaProductos() {
         return listaProductos;
     }
 
-    public void setListaProductos(ListaSimple<Producto> listaProductos) {
-        this.listaProductos = listaProductos;
+    public void setProducto(Producto producto) {
+        this.listaProductos.agregarfinal(producto);
     }
 
-    public Muro getMuro() {
-        return muro;
-    }
-
-    public void setMuro(Muro muro) {
-        this.muro = muro;
-    }
 
     public Cola<Solicitud> getSolicitudes() {
         return solicitudes;
     }
 
-    public void setSolicitudes(Cola<Solicitud> solicitudes) {
-        this.solicitudes = solicitudes;
+    public void setSolicitud(Solicitud solicitud) {
+        this.solicitudes.encolar(solicitud);
     }
 
     public ListaSimple<Vendedor> getContactos() {
         return contactos;
     }
 
-    public void setContactos(ListaSimple<Vendedor> contactos) {
-        this.contactos = contactos;
+    public void setContacto(Vendedor contacto) {
+        this.contactos.agregarfinal(contacto);
     }
 }
