@@ -1,4 +1,26 @@
 package co.edu.uniquindio.redsocial.controller;
 
-public class PostController{
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+
+public class PostController {
+
+    @FXML
+    private ImageView imgProducto;
+
+    @FXML
+    private TextArea txtDescripcion;
+
+    @FXML
+    void comprarProducto(ActionEvent event) {
+
+    }
+
+    @FXML
+    void meGusta(ActionEvent event) {
+
+    }
+
 }
