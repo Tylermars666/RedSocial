@@ -1,9 +1,13 @@
 package co.edu.uniquindio.redsocial.model;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Comentario implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private String comentario;
     private LocalDate fecha;

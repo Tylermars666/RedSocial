@@ -3,10 +3,14 @@ package co.edu.uniquindio.redsocial.model;
 import co.edu.uniquindio.redsocial.structures.cola.Cola;
 import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Post implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private Vendedor vendedor;
     private LocalDate fecha;

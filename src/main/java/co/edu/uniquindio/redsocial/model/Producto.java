@@ -3,9 +3,13 @@ package co.edu.uniquindio.redsocial.model;
 import co.edu.uniquindio.redsocial.model.Enums.CategoriaProducto;
 import co.edu.uniquindio.redsocial.model.Enums.EstadoProducto;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Producto implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private String nombre;
     private Imagen imagen;
