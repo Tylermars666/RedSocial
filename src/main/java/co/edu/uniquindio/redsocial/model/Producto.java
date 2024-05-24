@@ -2,6 +2,7 @@ package co.edu.uniquindio.redsocial.model;
 
 import co.edu.uniquindio.redsocial.model.Enums.CategoriaProducto;
 import co.edu.uniquindio.redsocial.model.Enums.EstadoProducto;
+import javafx.scene.image.Image;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,13 +13,13 @@ public class Producto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String nombre;
-    private Imagen imagen;
+    private Image imagen;
     private CategoriaProducto categoria;
     private double precio;
     private EstadoProducto estado;
 
 
-    public Producto(String nombre, Imagen imagen, CategoriaProducto categoria, double precio, EstadoProducto estado) {
+    public Producto(String nombre, Image imagen, CategoriaProducto categoria, double precio, EstadoProducto estado) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.categoria = categoria;
@@ -37,11 +38,11 @@ public class Producto implements Serializable {
         this.nombre = nombre;
     }
 
-    public Imagen getImagen() {
+    public Image getImagen() {
         return imagen;
     }
 
-    public void setImagen(Imagen imagen) {
+    public void setImagen(Image imagen) {
         this.imagen = imagen;
     }
 
