@@ -17,19 +17,16 @@ public class Post implements Serializable {
     private Producto producto;
     private String descripcion;
     private int likes;
-    private Cola<Comentario> comentarios;
 
     public Post(Vendedor vendedor, LocalDate fecha, Producto producto, String descripcion) {
         this.vendedor = vendedor;
         this.fecha = fecha;
         this.producto = producto;
         this.descripcion = descripcion;
-        this.comentarios = new Cola<>();
     }
 
     public Post() {
 
-        this.comentarios = new Cola<>();
     }
 
     public Vendedor getVendedor() {
@@ -70,13 +67,5 @@ public class Post implements Serializable {
 
     public void setLike() {
         this.likes++;
-    }
-
-    public Cola<Comentario> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentario(Comentario comentario) {
-        this.comentarios.encolar(comentario);
     }
 }

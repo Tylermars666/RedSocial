@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="230.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.redsocial.controller.PostController">
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
@@ -28,9 +27,14 @@
       <Label alignment="CENTER" prefHeight="18.0" prefWidth="199.0" />
       <HBox prefHeight="54.0" prefWidth="490.0">
          <children>
+            <Label fx:id="lblUsuario" text="Label">
+               <HBox.margin>
+                  <Insets left="100.0" />
+               </HBox.margin>
+            </Label>
             <Button mnemonicParsing="false" onAction="#meGusta" style="-fx-background-radius: 50;" text="Me gusta">
                <HBox.margin>
-                  <Insets bottom="10.0" left="150.0" />
+                  <Insets bottom="10.0" left="80.0" />
                </HBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#comprarProducto" style="-fx-background-radius: 50;" text="Comprar">
