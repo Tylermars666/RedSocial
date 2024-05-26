@@ -1,5 +1,6 @@
 package co.edu.uniquindio.redsocial;
 
+import co.edu.uniquindio.redsocial.controller.NetworkController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,6 +16,8 @@ public class Network extends Application {
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
+        NetworkController controller = fxmlLoader.getController();
+        controller.stageListener(stage);
     }
 
     public static void main(String[] args) {

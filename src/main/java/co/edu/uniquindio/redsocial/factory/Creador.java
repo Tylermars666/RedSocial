@@ -1,5 +1,6 @@
 package co.edu.uniquindio.redsocial.factory;
 
+import co.edu.uniquindio.redsocial.database.Database;
 import co.edu.uniquindio.redsocial.model.*;
 import co.edu.uniquindio.redsocial.model.Enums.CategoriaProducto;
 import co.edu.uniquindio.redsocial.model.Enums.EstadoProducto;
@@ -11,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.HashMap;
 
 public class Creador {
 
@@ -26,8 +28,9 @@ public class Creador {
 
     public void crearBase() throws IOException {
 
+        HashMap<String, Usuario> base = new HashMap<>();
 
-        Admin admin = new Admin("admin", "0000", new Muro(), "admin", "root", "main");
+        Admin admin = new Admin("admin", "666", new Muro(), "admin", "root", "main");
         Vendedor v1 = new Vendedor("Omar", "0000", new Muro(), "omar", "0000", "Santander", "Piedrahita");
         Vendedor v2 = new Vendedor("Carlos", "1111", new Muro(), "carlos", "1111", "Fachada", "Mancera");
         Vendedor v3 = new Vendedor("Eliana", "2222", new Muro(), "eliana", "2222", "Adiela", "Ortiz");
@@ -38,6 +41,8 @@ public class Creador {
         Vendedor v8 = new Vendedor("Monica", "7777", new Muro(), "monica", "7777", "Brasilia", "Trujillo");
         Vendedor v9 = new Vendedor("Cristian", "8888", new Muro(), "cristian", "8888", "Villa Carolina", "Cortes");
         Vendedor v10 = new Vendedor("Jenny", "9999", new Muro(), "jenny", "9999", "Clarita", "Gomez");
+
+
 
         //V1
         Image img1 = new Image(new ByteArrayInputStream(Files.readAllBytes(Paths.get("T:/Windows/DocumentosWin/tmp3/RedSocial/src/main/resources/co/edu/uniquindio/redsocial/productImg/v1/1.jpg"))));
@@ -186,6 +191,22 @@ public class Creador {
         grafoVendedores.agregarArista(v7, v8);
         grafoVendedores.agregarArista(v7, v10);
         grafoVendedores.agregarArista(v8, v9);
+
+        base.put(admin.getId(),admin);
+        base.put(v1.getId(),v1);
+        base.put(v2.getId(),v2);
+        base.put(v3.getId(),v3);
+        base.put(v4.getId(),v4);
+        base.put(v5.getId(),v5);
+        base.put(v6.getId(),v6);
+        base.put(v7.getId(),v7);
+        base.put(v8.getId(),v8);
+        base.put(v9.getId(),v9);
+        base.put(v10.getId(),v10);
+
+        Database.getInstance().guardarBase(base);
+
+
 
     }
 }

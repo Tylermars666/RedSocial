@@ -1,12 +1,11 @@
 package co.edu.uniquindio.redsocial.database;
 import co.edu.uniquindio.redsocial.model.Usuario;
-import co.edu.uniquindio.redsocial.model.Vendedor;
 
 import java.util.HashMap;
 
 public class Database {
 
-    private HashMap<String, ? extends Usuario> baseDatos;
+    private HashMap<String,Usuario> baseDatos;
 
     private static Database instance;
     private Database(){this.baseDatos = new HashMap<>();}
@@ -17,7 +16,7 @@ public class Database {
         return instance;
     }
 
-    public void guardarBase(HashMap<String, ? extends Usuario> baseDatos){
+    public void guardarBase(HashMap<String, Usuario> baseDatos){
 
         this.baseDatos = baseDatos;
 
@@ -30,6 +29,19 @@ public class Database {
 
             return null;
         }
+
+    }
+
+    public boolean validarCredenciales(String usuario, String clave){
+
+        for (HashMap.Entry<String, Usuario> entry : baseDatos.entrySet()) {
+
+            if(entry.getValue().getUsuario().equalsIgnoreCase(usuario) && entry.getValue().getClave().equalsIgnoreCase(clave)){
+                return true;
+            }
+        }
+
+        return false;
 
     }
 }
