@@ -3,7 +3,13 @@ package co.edu.uniquindio.redsocial.structures.grafo;
 import co.edu.uniquindio.redsocial.model.Usuario;
 import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
 
-public class Grafo {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Grafo implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
     private int numNodos;
     private ListaSimple<Usuario> listaUsuarios;
     private ListaSimple<ListaSimple<Usuario>> listaAdyacencias;

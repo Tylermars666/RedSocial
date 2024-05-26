@@ -3,6 +3,7 @@ package co.edu.uniquindio.redsocial.factory;
 import co.edu.uniquindio.redsocial.model.*;
 import co.edu.uniquindio.redsocial.model.Enums.CategoriaProducto;
 import co.edu.uniquindio.redsocial.model.Enums.EstadoProducto;
+import co.edu.uniquindio.redsocial.structures.grafo.Grafo;
 import javafx.scene.image.Image;
 
 import java.io.ByteArrayInputStream;
@@ -108,8 +109,35 @@ public class Creador {
         Post pt19 = new Post(v10, LocalDate.now(), p19, "Un portatil moderno apenas para usar office y redes sociales");
         Post pt20 = new Post(v10, LocalDate.now(), p20, "Un portatil gamer para los amantes de los videojuegos y programas de la nasa");
 
-        //Crear grafo con matriz para hacer las respectivas conexiones
-        //Un segundo grafo para el admin, que va a estar conectado a todos los vendedores
+        Grafo grafoVendedores = new Grafo(10);
+        grafoVendedores.setUsuario(v1);
+        grafoVendedores.setUsuario(v2);
+        grafoVendedores.setUsuario(v3);
+        grafoVendedores.setUsuario(v4);
+        grafoVendedores.setUsuario(v5);
+        grafoVendedores.setUsuario(v6);
+        grafoVendedores.setUsuario(v7);
+        grafoVendedores.setUsuario(v8);
+        grafoVendedores.setUsuario(v9);
+        grafoVendedores.setUsuario(v10);
+
+        //Adyacencias
+        grafoVendedores.agregarArista(v1,v2);
+        grafoVendedores.agregarArista(v1,v3);
+        grafoVendedores.agregarArista(v1,v10);
+        grafoVendedores.agregarArista(v2,v5);
+        grafoVendedores.agregarArista(v2,v7);
+        grafoVendedores.agregarArista(v3,v5);
+        grafoVendedores.agregarArista(v4,v5);
+        grafoVendedores.agregarArista(v4,v10);
+        grafoVendedores.agregarArista(v6,v7);
+        grafoVendedores.agregarArista(v6,v9);
+        grafoVendedores.agregarArista(v7,v8);
+        grafoVendedores.agregarArista(v7,v10);
+        grafoVendedores.agregarArista(v8,v9);
+
+
+
 
 
     }
