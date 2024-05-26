@@ -2,6 +2,7 @@ package co.edu.uniquindio.redsocial.model;
 
 import co.edu.uniquindio.redsocial.structures.cola.Cola;
 import co.edu.uniquindio.redsocial.structures.lista.ListaSimple;
+import javafx.geometry.Pos;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -15,12 +16,14 @@ public class Vendedor extends Usuario implements Serializable{
     private ListaSimple<Producto> listaProductos;
     private Cola<Solicitud> solicitudes;
     private ListaSimple<Vendedor> contactos;
+    private ListaSimple<Post> posts;
 
     public Vendedor() {
 
         this.listaProductos = new ListaSimple<>();
         this.solicitudes = new Cola<>();
         this.contactos = new ListaSimple<>();
+        this.posts = new ListaSimple<>();
     }
 
     public Vendedor(String nombre, String id, Muro muro, String usuario, String clave, String direccion, String apellido) {
@@ -30,6 +33,15 @@ public class Vendedor extends Usuario implements Serializable{
         listaProductos = new ListaSimple<>();
         solicitudes = new Cola<>();
         contactos = new ListaSimple<>();
+        this.posts = new ListaSimple<>();
+    }
+
+    public ListaSimple<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPost(Post post) {
+        this.posts.agregarfinal(post);
     }
 
     public String getDireccion() {
