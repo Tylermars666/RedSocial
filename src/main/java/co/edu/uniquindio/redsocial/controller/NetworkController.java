@@ -52,6 +52,14 @@ public class NetworkController implements Initializable {
                     e.printStackTrace();
                 }
 
+            } else if (rolSeleccionado.equalsIgnoreCase("Vendedor")){
+                {
+                    try{
+                        abrirVentanaVendedor();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
             }
 
         }
@@ -96,7 +104,19 @@ public class NetworkController implements Initializable {
 
     }
 
-    private void abrirVentanaVendedor(){
+    private void abrirVentanaVendedor() throws Exception{
+
+
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/redsocial/view/user-view.fxml"));
+
+        Scene scene2 = new Scene(loader2.load());
+        Stage stage2 = new Stage();
+        stage2.setTitle("Usuario");
+        stage2.setScene(scene2);
+
+        UserController controller2 = loader2.getController();
+        stage2.show();
+        ventanaLogin.close();
 
 
 
