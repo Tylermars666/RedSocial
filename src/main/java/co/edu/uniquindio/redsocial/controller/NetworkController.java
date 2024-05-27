@@ -3,6 +3,7 @@ package co.edu.uniquindio.redsocial.controller;
 import co.edu.uniquindio.redsocial.database.Database;
 import co.edu.uniquindio.redsocial.factory.Creador;
 import co.edu.uniquindio.redsocial.factory.Login;
+import co.edu.uniquindio.redsocial.model.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -42,7 +43,9 @@ public class NetworkController implements Initializable {
         String usuario = txtUsuario.getText();
         String clave = txtClave.getText();
 
-        if(Database.getInstance().validarCredenciales(usuario,clave)){
+        Usuario userLog = Database.getInstance().validarCredenciales(usuario,clave);
+
+        if(userLog!=null){
 
             if(rolSeleccionado.equalsIgnoreCase("Administrador")){
 
@@ -63,6 +66,8 @@ public class NetworkController implements Initializable {
             }
 
         }
+
+        Login.getInstance().setUsuarioLogeado(userLog);
 
 
     }

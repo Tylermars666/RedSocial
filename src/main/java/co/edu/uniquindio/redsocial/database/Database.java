@@ -32,16 +32,16 @@ public class Database {
 
     }
 
-    public boolean validarCredenciales(String usuario, String clave){
+    public Usuario validarCredenciales(String usuario, String clave){
 
         for (HashMap.Entry<String, Usuario> entry : baseDatos.entrySet()) {
 
             if(entry.getValue().getUsuario().equalsIgnoreCase(usuario) && entry.getValue().getClave().equalsIgnoreCase(clave)){
-                return true;
+                return entry.getValue();
             }
         }
 
-        return false;
+        return null;
 
     }
 }
